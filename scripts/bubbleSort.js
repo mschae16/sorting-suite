@@ -1,4 +1,4 @@
-const numbers = [10, 7, 8, 5, 6]
+const letters = ['d', 'b', 'a', 'c']
 
 const bubbleSort = array => {
 
@@ -14,6 +14,6 @@ const bubbleSort = array => {
   return array
 }
 
-bubbleSort(numbers);
+bubbleSort(letters);
 
 module.exports = bubbleSort;
