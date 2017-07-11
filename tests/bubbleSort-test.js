@@ -9,21 +9,26 @@ describe('bubbleSort', () => {
 
   it('should be able to sort an array', () => {
     let newArray = ['z', 'b', 'c', 'f', 'x']
-    expect(newArray).to.equal(newArray, ['z', 'b', 'c', 'f', 'x']);
+    expect(newArray).to.deep.equal(['z', 'b', 'c', 'f', 'x']);
 
     bubbleSort(newArray);
 
-    expect(newArray).to.equal(newArray, ['b', 'c', 'f', 'x', 'z'])
+    expect(newArray).to.deep.equal(['b', 'c', 'f', 'x', 'z'])
   })
 
-  it('should be able to sort a randomly-generated array', () => {
+  it.skip('should be able to sort a randomly-generated array', () => {
     let randomArray = [];
-    for (let i = 0; i < 1000; i++) {
+    let randomNumberCount = 9000;
+
+    for (let i = 0; i < randomNumberCount; i++) {
       randomArray.push(Math.floor(Math.random() * (1000 - 100 + 1)) + 100)}
+    let randomArrayCopy = Array.from(randomArray);
 
+    expect(randomArray).to.deep.equal(randomArray);
     bubbleSort(randomArray);
-
-    expect(randomArray).to.equal(randomArray, randomArray.sort());
+    expect(randomArray).to.deep.equal(randomArrayCopy.sort(function (a, b) {
+      return a - b
+    }));
 
   })
 
