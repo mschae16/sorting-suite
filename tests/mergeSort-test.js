@@ -3,7 +3,7 @@ const { mergeSort, mergeSplitArrays } = require('../scripts/mergeSort.js');
 
 describe('mergeSort functions', () => {
 
-  it('should have a mergeSort and mergeSplitArrays function and they should be functions', () => {
+  it('should have mergeSort and mergeSplitArrays functions', () => {
     assert.isFunction(mergeSort);
     assert.isFunction(mergeSplitArrays);
   })
@@ -22,7 +22,8 @@ describe('mergeSort functions', () => {
     let randomNumberCount = 5000;
 
     for (let i = 0; i < randomNumberCount; i++) {
-      randomArray.push(Math.floor(Math.random() * (1000 - 100 + 1)) + 100)}
+      randomArray.push(Math.floor(Math.random() * (1000 - 100 + 1)) + 100)
+    }
     let randomArrayCopy = Array.from(randomArray);
 
     expect(randomArray).to.deep.equal(randomArray);

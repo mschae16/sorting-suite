@@ -21,7 +21,8 @@ describe('quickSort', () => {
     let randomNumberCount = 9000;
 
     for (let i = 0; i < randomNumberCount; i++) {
-      randomArray.push(Math.floor(Math.random() * (1000 - 100 + 1)) + 100)}
+      randomArray.push(Math.floor(Math.random() * (1000 - 100 + 1)) + 100)
+    }
     let randomArrayCopy = Array.from(randomArray);
 
     expect(randomArray).to.deep.equal(randomArray);
