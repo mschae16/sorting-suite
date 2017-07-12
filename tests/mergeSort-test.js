@@ -1,32 +1,33 @@
 const { expect, assert } = require('chai');
-const mergeSort = require('../scripts/mergeSort.js');
+const { mergeSort, mergeSplitArrays } = require('../scripts/mergeSort.js');
 
-describe('mergeSort', () => {
+describe('mergeSort functions', () => {
 
-  it('should be a function', () => {
+  it('should have a mergeSort and mergeSplitArrays function and they should be functions', () => {
     assert.isFunction(mergeSort);
+    assert.isFunction(mergeSplitArrays);
   })
 
   it('should be able to sort an array', () => {
     let newArray = ['z', 'b', 'c', 'f', 'x']
     expect(newArray).to.deep.equal(['z', 'b', 'c', 'f', 'x']);
 
-    mergeSort(newArray);
+    let modifiedArray = mergeSort(newArray);
 
-    expect(newArray).to.deep.equal(['b', 'c', 'f', 'x', 'z'])
+    expect(modifiedArray).to.deep.equal(['b', 'c', 'f', 'x', 'z'])
   })
 
-  it.skip('should be able to sort a randomly-generated array', () => {
+  it('should be able to sort a randomly-generated array', () => {
     let randomArray = [];
-    let randomNumberCount = 9000;
+    let randomNumberCount = 5000;
 
     for (let i = 0; i < randomNumberCount; i++) {
       randomArray.push(Math.floor(Math.random() * (1000 - 100 + 1)) + 100)}
     let randomArrayCopy = Array.from(randomArray);
 
     expect(randomArray).to.deep.equal(randomArray);
-    mergeSort(randomArray);
-    expect(randomArray).to.deep.equal(randomArrayCopy.sort(function (a, b) {
+    let modifiedArray = mergeSort(randomArray);
+    expect(modifiedArray).to.deep.equal(randomArrayCopy.sort(function (a, b) {
       return a - b
     }));
 
