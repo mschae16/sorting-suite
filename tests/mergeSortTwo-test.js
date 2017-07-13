@@ -18,12 +18,12 @@ describe('mergeSortTwo functions', () => {
   })
 
   it('should be able to sort an array that includes negative numbers', () => {
-    let newArray = [-3, -1, -7, -5, -4];
-    expect(newArray).to.deep.equal([-3, -1, -7, -5, -4])
+    let newArray = [3, -1, -7, 5, -4];
+    expect(newArray).to.deep.equal([3, -1, -7, 5, -4])
 
     let modifiedArray = mergeSortTwo(newArray)
 
-    expect(modifiedArray).to.deep.equal([-7, -5, -4, -3, -1])
+    expect(modifiedArray).to.deep.equal([-7, -4, -1, 3, 5])
   })
 
   it('should be able to sort a randomly-generated array', () => {
