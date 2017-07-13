@@ -1,4 +1,4 @@
-const letters = ["d", "b", "a", "c", 'h', 'z', 'x', 'r', 'l']
+const letters = ['d', 'b', 'a', 'c']
 
 const quickSort = array => {
   if (array.length < 2) {
