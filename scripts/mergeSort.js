@@ -35,8 +35,7 @@ const mergeSplitArrays = (leftSide, rightSide) => {
       newArray.push(rightSide[indexRight])
       indexRight++
     }
-  }
-  return [...newArray, ...leftSide.slice(indexLeft), ...rightSide.slice(indexRight)]
+  }  return [...newArray, ...leftSide.slice(indexLeft), ...rightSide.slice(indexRight)]
 }
 
 mergeSort(letters)
