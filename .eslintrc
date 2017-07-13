@@ -44,10 +44,10 @@
       "error",
       "unix"
     ],
-    "max-len": [
-      "error",
-      80
-    ],
+    # "max-len": [
+    #   "error",
+    #   80
+    # ],
     "new-cap": [
       "error", {
         "newIsCap": true

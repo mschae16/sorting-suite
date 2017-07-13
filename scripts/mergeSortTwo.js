@@ -2,32 +2,38 @@ const letters = ['d', 'b', 'a', 'c']
 
 const mergeSortTwo = array => {
 
-  if (array.length < 2) {
-    return array;
+  if (Array.isArray(array)) {
+
+    if (array.length < 2) {
+      return array;
+    } else {
+      let mid = Math.floor(array.length / 2)
+      let leftSide = array.slice(0, mid)
+      let rightSide = array.slice(mid)
+      return mergeSplit(mergeSortTwo(leftSide), mergeSortTwo(rightSide))
+    }
+
   } else {
-    let mid = Math.floor(array.length / 2);
-    let leftSide = array.slice(0, mid);
-    let rightSide = array.slice(mid);
-    return mergeSplit(mergeSortTwo(leftSide), mergeSortTwo(rightSide))
+    return 'Error - argument must be an array'
   }
 }
 
 const mergeSplit = (leftSide, rightSide) => {
-  let newArray = [];
+  let newArray = []
 
   while (leftSide.length && rightSide.length) {
     if (leftSide[0] < rightSide[0]) {
-      newArray.push(leftSide.shift());
+      newArray.push(leftSide.shift())
     } else {
-      newArray.push(rightSide.shift());
+      newArray.push(rightSide.shift())
     }
   }
 
-  newArray.push(...leftSide, ...rightSide);
+  newArray.push(...leftSide, ...rightSide)
 
-  return newArray;
+  return newArray
 }
 
 mergeSortTwo(letters)
 
-module.exports = {mergeSortTwo, mergeSplit};
+module.exports = {mergeSortTwo, mergeSplit}
