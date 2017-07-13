@@ -34,7 +34,6 @@ describe('quickSort', () => {
   it.skip('should be able to sort a randomly-generated array', () => {
     let randomArray = [];
     let randomNumberCount = 350000
-
     for (let i = 0; i < randomNumberCount; i++) {
       randomArray.push(Math.floor(Math.random() * (1000 - 100 + 1)) + 100)
     }
