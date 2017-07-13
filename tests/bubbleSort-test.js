@@ -36,10 +36,7 @@ describe('bubbleSort', () => {
 
     expect(randomArray).to.deep.equal(randomArray);
     bubbleSort(randomArray);
-    expect(randomArray).to.deep.equal(randomArrayCopy.sort(function (a, b) {
-      return a - b
-    }));
-
+    expect(randomArray).to.deep.equal(randomArrayCopy.sort((a, b) => a - b));
   })
 
 })

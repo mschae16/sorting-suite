@@ -36,9 +36,7 @@ describe('quickSort', () => {
 
     expect(randomArray).to.deep.equal(randomArray);
     let modifiedArray = quickSort(randomArray);
-    expect(modifiedArray).to.deep.equal(randomArrayCopy.sort(function (a, b) {
-      return a - b
-    }));
+    expect(modifiedArray).to.deep.equal(randomArrayCopy.sort((a, b) => a - b));
 
   })
 
