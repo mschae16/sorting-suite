@@ -2,18 +2,23 @@ const letters = ['d', 'b', 'a', 'c']
 
 const insertionSort = array => {
 
-  for (let i = 0; i < array.length; i++) {
+  if (Array.isArray(array)) {
 
-    for (let j = i; j >= 0; j--) {
+    for (let i = 0; i < array.length; i++) {
 
-      if (array[j] > array[j + 1]) {
-        [array[j], array[j + 1]] = [array[j + 1], array[j]]
+      for (let j = i; j >= 0; j--) {
+
+        if (array[j] > array[j + 1]) {
+          [array[j], array[j + 1]] = [array[j + 1], array[j]]
+        }
       }
     }
+    return array
+  } else {
+    return 'Error - argument must be an array'
   }
-  return array
 }
 
-insertionSort(letters);
+insertionSort(letters)
 
-module.exports = insertionSort;
+module.exports = insertionSort

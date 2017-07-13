@@ -1,13 +1,19 @@
-const { expect, assert } = require('chai');
-const bubbleSort = require('../scripts/bubbleSort.js');
+const { expect, assert } = require('chai')
+const bubbleSort = require('../scripts/bubbleSort.js')
 
 describe('bubbleSort', () => {
 
   it('should be a function', () => {
-    assert.isFunction(bubbleSort);
+    assert.isFunction(bubbleSort)
   })
 
-  it('should be able to sort an array', () => {
+  it('should not accept anything but an array as an argument', () => {
+    const myObject = {name: 'Margo'}
+
+    expect(bubbleSort(myObject)).to.equal('Error - argument must be an array')
+  })
+
+  it('should be able to sort an array of letters', () => {
     let newArray = ['z', 'b', 'c', 'f', 'x']
     expect(newArray).to.deep.equal(['z', 'b', 'c', 'f', 'x'])
 
@@ -25,18 +31,18 @@ describe('bubbleSort', () => {
     expect(newArray).to.deep.equal([-7, -4, -1, 3, 5])
   })
 
-  it('should be able to sort a randomly-generated array', () => {
-    let randomArray = [];
-    let randomNumberCount = 7000;
+  it.skip('should be able to sort a randomly-generated array', () => {
+    let randomArray = []
+    let randomNumberCount = 7000
 
     for (let i = 0; i < randomNumberCount; i++) {
       randomArray.push(Math.floor(Math.random() * (1000 - 100 + 1)) + 100)
     }
-    let randomArrayCopy = Array.from(randomArray);
+    let randomArrayCopy = Array.from(randomArray)
 
-    expect(randomArray).to.deep.equal(randomArray);
-    bubbleSort(randomArray);
-    expect(randomArray).to.deep.equal(randomArrayCopy.sort((a, b) => a - b));
+    expect(randomArray).to.deep.equal(randomArray)
+    bubbleSort(randomArray)
+    expect(randomArray).to.deep.equal(randomArrayCopy.sort((a, b) => a - b))
   })
 
 })
