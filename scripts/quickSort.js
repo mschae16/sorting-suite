@@ -8,11 +8,11 @@ const quickSort = array => {
       return array
     }
 
-    var pivot = array[array.length - 1]
-    var leftSide = []
-    var rightSide = []
+    const pivot = array[array.length - 1]
+    const leftSide = []
+    const rightSide = []
 
-    for (var i = 0; i < array.length - 1; i++) {
+    for (let i = 0; i < array.length - 1; i++) {
       if (array[i] < pivot) {
         leftSide.push(array[i])
       } else {

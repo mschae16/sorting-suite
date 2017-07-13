@@ -31,9 +31,9 @@ describe('insertionSort', () => {
     expect(newArray).to.deep.equal([-7, -4, -1, 3, 5])
   })
 
-  it.skip('should be able to sort a randomly-generated array', () => {
+  it('should be able to sort a randomly-generated array', () => {
     let randomArray = []
-    let randomNumberCount = 7800
+    let randomNumberCount = 7700
 
     for (let i = 0; i < randomNumberCount; i++) {
       randomArray.push(Math.floor(Math.random() * (1000 - 100 + 1)) + 100)

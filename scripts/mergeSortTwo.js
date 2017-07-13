@@ -5,7 +5,7 @@ const mergeSortTwo = array => {
   if (Array.isArray(array)) {
 
     if (array.length < 2) {
-      return array;
+      return array
     } else {
       let mid = Math.floor(array.length / 2)
       let leftSide = array.slice(0, mid)
